@@ -1,9 +1,5 @@
 set nocompatible
 
-if has('win32') || has('win64')
-    let $PATH=$HOME . '\.vim\bin;C:\Python27_x64;' . $PATH
-endif
-
 filetype off
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
