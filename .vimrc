@@ -79,9 +79,17 @@ silent! nnoremap <unique> <leader>fe :Gtags -ge <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>n :cn<CR>
 silent! nnoremap <unique> <leader>p :cp<CR>
 
+" Use gtags-cscope for cscope search
+set csprg=gtags-cscope
+" enable vim to search in cscope dabase for Ctrl+]
+set cscopetag
+" Make the cscope output to quickfix window
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
 filetype plugin indent on     " required! 
 
 " === END OF vundle==="
+
 
 " Basic VIM setting
 source ~/.vim/vimrcs/special.vim
