@@ -2,8 +2,15 @@ set nocompatible
 
 filetype off
 filetype plugin indent off
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
+if has("win64") || has("win32") || has("win16")
+	set rtp+=~/.vim/bundle/vundle/
+	let vpath='~/.vim/bundle/vundle/'
+	call vundle#rc(vpath)
+else
+	set rtp+=$HOME/.vim/bundle/vundle/
+	call vundle#rc()
+endif
+
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
