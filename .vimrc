@@ -18,10 +18,10 @@ Bundle 'gmarik/vundle'
 source ~/.vim/vimrcs/basic.vim
 
 " VIM snipmate and its dependency
-Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 
 " The powerful CtrlP 
 Bundle 'kien/ctrlp.vim'
@@ -41,6 +41,9 @@ nnoremap <F8> :TagbarToggle<CR>
 
 " auto completion with fuzzy and clang support
 Bundle 'Valloric/YouCompleteMe'
+" key compatible with snipmate
+let g:ycm_key_list_select_completion = ['<C-j>']
+let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " syntax checking
 Bundle 'scrooloose/syntastic'
@@ -77,21 +80,18 @@ nnoremap <leader>fw :Ack! --smart-case -w <cword><cr>
 Bundle 'vim-scripts/gtags.vim'
 silent! nnoremap <unique> <leader>fr :Gtags -r <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>fg :Gtags <C-R>=expand("<cword>")<CR><CR>
-silent! nnoremap <unique> <leader>fs :Gtags -g <C-R>=expand("<cword>")<CR><CR>
-silent! nnoremap <unique> <leader>ff :Gtags -f <C-R>=expand("%")<CR><CR>
-silent! nnoremap <unique> <leader>fe :Gtags -ge <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>n :cn<CR>
 silent! nnoremap <unique> <leader>p :cp<CR>
-
 " Use gtags-cscope for cscope search
 set csprg=gtags-cscope
 " enable vim to search in cscope dabase for Ctrl+]
 set cscopetag
 " Make the cscope output to quickfix window
 set cscopequickfix=s-,c-,d-,i-,t-,e-
+silent! nnoremap <unique> <leader>fs :cs find s <C-R>=expand("<cword>")<CR><CR>
+silent! nnoremap <unique> <leader>fe :cs find e <C-R>=expand("<cword>")<CR><CR>
 
 filetype plugin indent on     " required! 
-" autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " === END OF vundle==="
 
