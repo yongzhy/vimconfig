@@ -1,6 +1,7 @@
 set nocompatible
 
 filetype off
+filetype plugin indent off
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -26,10 +27,6 @@ let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/](Feedback|SSIProtocol)',
 	\ 'file': '\v\.(xsl|txt|xml|vsd|exe|ppt|tags|out|ref)$',
 	\ }
-
-
-" Golang syntax and auto complete
-Bundle 'Blackrush/vim-gocode'
 
 " Tagbar to show tags in current file
 Bundle 'majutsushi/tagbar'
@@ -87,6 +84,7 @@ set cscopetag
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 filetype plugin indent on     " required! 
+" autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " === END OF vundle==="
 
