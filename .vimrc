@@ -12,11 +12,12 @@ else
 	call vundle#rc()
 endif
 
+" Basic VIM setting
+source ~/.vim/vimrcs/basic.vim
+
 " vundle settings
 source ~/.vim/vimrcs/vundle.vim 
 
-" Basic VIM setting
-source ~/.vim/vimrcs/basic.vim
 source ~/.vim/vimrcs/special.vim
 source ~/.vim/vimrcs/keys.vim
 
