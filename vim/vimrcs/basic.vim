@@ -32,8 +32,8 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ";"
-let g:mapleader = ";"
+let mapleader = ","
+let g:mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -140,7 +140,7 @@ if has("gui_running")
     set guioptions-=LlRrb
     if has("win16") || has("win32") || has("win64")
        set guifont=consolas:h10
-       set guifontwide=YouYuan:h10
+       set guifontwide=Yahei_Mono:h10,YouYuan:h10,NSimSun:h10,SimHei:h10
     endif
 endif
 
