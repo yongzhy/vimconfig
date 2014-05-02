@@ -1,18 +1,6 @@
 set nocompatible
 set backspace=2
 
-filetype off
-filetype plugin indent off
-if has("win64") || has("win32") || has("win16")
-	set rtp+=~/.vim/bundle/vundle/
-	let vpath='~/.vim/bundle/'
-	call vundle#rc(vpath)
-	set rtp+=~/.vim/
-else
-	set rtp+=$HOME/.vim/bundle/vundle/
-	call vundle#rc()
-endif
-
 " Basic VIM setting
 source ~/.vim/vimrcs/basic.vim
 
