@@ -78,3 +78,34 @@ snippet xmit8
 snippet xmit16
 	M_ZHYXmitAndFormatInt16( "${1: }", ${2:var} );
 
+# cunitfile
+snippet cunitfile
+	#include <stdio.h>
+	#include <stdarg.h>
+	#include <stddef.h>
+	#include <setjmp.h>
+	#include <cmocka.h>
+	#include <string.h>
+	#include <stdlib.h>
+
+	static void ${1:test}(void **state)
+	{
+		${2:(void)state;}
+	}
+
+	int main(void) 
+	{
+		const UnitTest tests[] = 
+		{
+			unit_test(${3:test}),
+		};
+
+		return run_tests(tests);
+	}
+
+# cunitfunc
+snippet cunitfunc
+	static void ${1:test}(void **state)
+	{
+		${2:(void)state;}
+	}
