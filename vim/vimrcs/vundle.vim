@@ -1,16 +1,27 @@
 " === START OF vundle==="
+filetype off
+filetype plugin indent off
+if has("win64") || has("win32") || has("win16")
+	set rtp+=~/.vim/bundle/Vundle.vim/
+	let vpath='~/.vim/bundle/'
+	call vundle#begin(vpath)
+	set rtp+=~/.vim/
+else
+	set rtp+=$HOME/.vim/bundle/Vundle.vim/
+	call vundle#begin()
+endif
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " VIM snipmate and its dependency
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " The powerful CtrlP 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_root_markers = ['f3make.bat', '.p4config', 'cscope.out', 'cscope.files', '.git', '.hg', '.svn', '.bzr', '_darcs', 'GTAGS']
@@ -22,48 +33,40 @@ let g:ctrlp_custom_ignore = {
 	\ }
 
 " Tagbar to show tags in current file
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 nnoremap <F8> :TagbarToggle<CR>
 
-" auto completion with fuzzy and clang support
-Bundle 'Valloric/YouCompleteMe'
-" key compatible with snipmate
-let g:ycm_key_list_select_completion = ['<C-j>']
-let g:ycm_key_list_previous_completion = ['<C-k>']
+if !has("win32unix")
+	" auto completion with fuzzy and clang support
+	Plugin 'Valloric/YouCompleteMe'
+	" key compatible with snipmate
+	let g:ycm_key_list_select_completion = ['<C-j>']
+	let g:ycm_key_list_previous_completion = ['<C-k>']
+endif
 
 " syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " airline status line
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 0
 
-" solarized color theme
-Bundle 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
-let g:solarized_bold      =0 
-let g:solarized_underline =0
-let g:solarized_italic    =0  
-let g:solarized_menu      =0
-set background=dark
-colorscheme solarized
-
 " Comment plugin
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 
 " Easy and fast motion
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 " Show visual indent guide
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Fast search tool
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>fa :Ack! --smart-case <cword><cr>
 nnoremap <leader>fw :Ack! --smart-case -w <cword><cr>
 
-Bundle 'vim-scripts/gtags.vim'
+Plugin 'vim-scripts/gtags.vim'
 silent! nnoremap <unique> <leader>fr :Gtags -r <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>fg :Gtags <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>n :cn<CR>
@@ -77,7 +80,22 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 silent! nnoremap <unique> <leader>fs :cs find s <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>fe :cs find e <C-R>=expand("<cword>")<CR><CR>
 
-filetype plugin indent on     " required! 
+" local vimrc support
+plugin 'MarcWeber/vim-addon-local-vimrc'
+
+" solarized color theme
+Plugin 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+let g:solarized_bold      =0 
+let g:solarized_underline =0
+let g:solarized_italic    =0  
+let g:solarized_menu      =0
+set background=dark
+" Set colorscheme here doesn't work for new version of vundle.vim. Need to set after vundle#end()
+" colorscheme solarized 
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " === END OF vundle==="
-
+colorscheme solarized
