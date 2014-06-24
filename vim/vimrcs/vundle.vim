@@ -80,6 +80,9 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 silent! nnoremap <unique> <leader>fs :cs find s <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>fe :cs find e <C-R>=expand("<cword>")<CR><CR>
 
+" local vimrc support
+plugin 'MarcWeber/vim-addon-local-vimrc'
+
 " solarized color theme
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
