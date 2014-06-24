@@ -46,35 +46,28 @@ snippet xmitall
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable4, 8 ); \
 	                                                                                                            ROM_OutCRLF();
 
+
 # xmitstr
 snippet xmitstr
-	M_ZHYXmitString( "${1: }" );
-
+	M_ZHYXmitString( "${1:x}" );
 # xmit32x1
 snippet xmit32x1
-	M_ZHYXmitAndFormatInt32( "${1: }", ${2:var} );
-
+	M_ZHYXmitAndFormatInt32( "${1:x}", ${2:var} );
 # xmit32x2
 snippet xmit32x2
-	M_ZHYXmitAndFormatInt32_32( "${1: }", ${2:var}, ${3:var1} );
-
+	M_ZHYXmitAndFormatInt32_32( "${1:x}", ${2:var}, ${3:var1} );
 # xmit32x3
 snippet xmit32x3
-	M_ZHYXmitAndFormatInt32_32_32( "${1: }", ${2:var}, ${3:var1}, ${4:var2} );
-
+	M_ZHYXmitAndFormatInt32_32_32( "${1:x}", ${2:var}, ${3:var1}, ${4:var2} );
 # xmit32x4
 snippet xmit32x4
-	M_ZHYXmitAndFormatInt32_32_32_32( "${1: }", ${2:var}, ${3:var1}, ${4:var2}, ${5:var3} );
-
+	M_ZHYXmitAndFormatInt32_32_32_32( "${1:x}", ${2:var}, ${3:var1}, ${4:var2}, ${5:var3} );
 # xmit32x5
 snippet xmit32x5
-	M_ZHYXmitAndFormatInt32_32_32_32_32( "${1: }", ${2:var}, ${3:var1}, ${4:var2}, ${5:var3}, ${6:var4} );
-
+	M_ZHYXmitAndFormatInt32_32_32_32_32( "${1:x}", ${2:var}, ${3:var1}, ${4:var2}, ${5:var3}, ${6:var4} );
 # xmit8
 snippet xmit8
-	M_ZHYXmitAndFormatInt8( "${1: }", ${2:var} );
-
+	M_ZHYXmitAndFormatInt8( "${1:x}", ${2:var} );
 # xmit16
 snippet xmit16
-	M_ZHYXmitAndFormatInt16( "${1: }", ${2:var} );
-
+	M_ZHYXmitAndFormatInt16( "${1:x}", ${2:var} );
