@@ -24,12 +24,17 @@ Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPBuffer'
+if has("win64") || has("win32") || has("win16")
+    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+else
+    let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+endif
 let g:ctrlp_root_markers = ['f3make.bat', '.p4config', 'cscope.out', 'cscope.files', '.git', '.hg', '.svn', '.bzr', '_darcs', 'GTAGS']
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](Feedback|SSIProtocol)',
-	\ 'file': '\v\.(xsl|txt|xml|vsd|exe|ppt|tags|out|ref)$',
+	\ 'dir':  'Feedback$',
+	\ 'file': '\.(xsl|txt|xml|vsd|exe|ppt|tags|out|ref)$',
 	\ }
 
 " Tagbar to show tags in current file
