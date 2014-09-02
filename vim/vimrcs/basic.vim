@@ -41,6 +41,9 @@ let g:mapleader = ","
 " Set 7 lines to the cursor - when moving vertically using j/k
 " set so=7
 
+" Set whitespace chars
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 " Turn on the WiLd menu
 set wildmode=longest:full
 set wildmenu
