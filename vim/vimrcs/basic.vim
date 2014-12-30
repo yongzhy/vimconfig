@@ -66,6 +66,7 @@ set wildignore+=*.pyc                            " Python byte code
 set ruler
 
 " Show line number
+set relativenumber
 set nu
 
 " Highlight current line
