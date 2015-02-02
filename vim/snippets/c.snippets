@@ -2,30 +2,49 @@
 # xmitall
 snippet xmitall
 	// Temp Debug Messages
-	#define M_ZHYXmitString( String )                                                                           ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitString( String )                                                                           ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutCRLF()
-	#define M_ZHYXmitAndFormatInt8( String, Variable )                                                          ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitString2( String1, String2 )                                                                ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String1 ); \
+	                                                                                                            ROM_OutString( "  " ); \
+	                                                                                                            ROM_OutString( ( const uint8 * )  String2 ); \
+	                                                                                                            ROM_OutCRLF()
+	#define M_ZHYXmitString3( String1, String2, String3 )                                                       ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String1 ); \
+	                                                                                                            ROM_OutString( "  " ); \
+	                                                                                                            ROM_OutString( ( const uint8 * )  String2 ); \
+	                                                                                                            ROM_OutString( "  " ); \
+	                                                                                                            ROM_OutString( ( const uint8 * )  String3 ); \
+	                                                                                                            ROM_OutCRLF()
+	#define M_ZHYXmitAndFormatInt8( String, Variable )                                                          ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 2 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt16( String, Variable )                                                         ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt16( String, Variable )                                                         ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 4 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt32( String, Variable )                                                         ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt32( String, Variable )                                                         ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 8 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt32_32( String, Variable, Variable1 )                                           ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt32_32( String, Variable, Variable1 )                                           ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 8 ); \
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable1, 8 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt32_32_32( String, Variable, Variable1, Variable2)                              ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt32_32_32( String, Variable, Variable1, Variable2)                              ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 8 ); \
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable1, 8 ); \
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable2, 8 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt32_32_32_32( String, Variable, Variable1, Variable2, Variable3 )               ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt32_32_32_32( String, Variable, Variable1, Variable2, Variable3 )               ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 8 ); \
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable1, 8 ); \
@@ -34,7 +53,8 @@ snippet xmitall
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable3, 8 ); \
 	                                                                                                            ROM_OutCRLF();
-	#define M_ZHYXmitAndFormatInt32_32_32_32_32( String, Variable, Variable1, Variable2, Variable3, Variable4 ) ROM_OutString( ( const uint8 * )  String ); \
+	#define M_ZHYXmitAndFormatInt32_32_32_32_32( String, Variable, Variable1, Variable2, Variable3, Variable4 ) ROM_OutString( "\n(ZHY)  " ); \
+																												ROM_OutString( ( const uint8 * )  String ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable, 8 ); \
 	                                                                                                            ROM_OutString( "  " ); \
 	                                                                                                            ROM_OutHexDigits( ( uint32 ) Variable1, 8 ); \
@@ -50,6 +70,12 @@ snippet xmitall
 # xmitstr
 snippet xmitstr
 	M_ZHYXmitString( "${1:x}" );
+# xmitstr2
+snippet xmitstr2
+	M_ZHYXmitString2( "${1:x}", "${2:var}" );
+# xmitstr3
+snippet xmitstr3
+	M_ZHYXmitString2( "${1:x}", "${2:var}", "${3:var1}" );
 # xmit32x1
 snippet xmit32x1
 	M_ZHYXmitAndFormatInt32( "${1:x}", ${2:var} );
