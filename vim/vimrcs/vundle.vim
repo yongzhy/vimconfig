@@ -47,6 +47,7 @@ if !has("win32unix")
 	" key compatible with snipmate
 	let g:ycm_key_list_select_completion = ['<C-j>']
 	let g:ycm_key_list_previous_completion = ['<C-k>']
+    let g:ycm_disable_for_files_larger_than_kb = 0
 endif
 
 " syntax checking
@@ -86,7 +87,7 @@ silent! nnoremap <unique> <leader>fs :cs find s <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>fe :cs find e <C-R>=expand("<cword>")<CR><CR>
 
 " local vimrc support
-plugin 'MarcWeber/vim-addon-local-vimrc'
+Plugin 'MarcWeber/vim-addon-local-vimrc'
 
 " solarized color theme
 Plugin 'altercation/vim-colors-solarized'
