@@ -32,10 +32,15 @@ endif
 let g:ctrlp_root_markers = ['f3make.bat', '.p4config', 'cscope.out', 'cscope.files', '.git', '.hg', '.svn', '.bzr', '_darcs', 'GTAGS']
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:100'
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  'Feedback$',
 	\ 'file': '\.(xsl|txt|xml|vsd|exe|ppt|tags|out|ref)$',
 	\ }
+
+" Fuzzy search to replace CtrlP builtin search
+Plugin 'JazzCore/ctrlp-cmatcher'
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Tagbar to show tags in current file
 Plugin 'majutsushi/tagbar'
