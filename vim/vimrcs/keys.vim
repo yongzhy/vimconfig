@@ -88,6 +88,9 @@ nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bm :bmodified<cr>
 nnoremap <leader>bs :buffers<CR>:buffer<Space>
 
+" Update buffer with preprocessor evaluated
+nnoremap <leader>bu :call cflags#SynUpdate()
+
 " Switch CWD to the directory of the open buffer
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 

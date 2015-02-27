@@ -105,6 +105,9 @@ set background=dark
 " Set colorscheme here doesn't work for new version of vundle.vim. Need to set after vundle#end()
 " colorscheme solarized 
 
+" process c flags
+Plugin 'yongzhy/vim-cflags'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
