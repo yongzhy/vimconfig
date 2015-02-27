@@ -53,6 +53,8 @@ if !has("win32unix")
 	let g:ycm_key_list_select_completion = ['<C-j>']
 	let g:ycm_key_list_previous_completion = ['<C-k>']
     let g:ycm_disable_for_files_larger_than_kb = 0
+    silent! nnoremap <unique> <leader>ff :YcmCompleter GoToDefinition<CR>
+    silent! nnoremap <unique> <leader>fc :YcmCompleter GoToDeclaration<CR>
 endif
 
 " syntax checking
@@ -107,6 +109,10 @@ set background=dark
 
 " process c flags
 Plugin 'yongzhy/vim-cflags'
+" Update buffer with preprocessor evaluated
+nnoremap <leader>bu :call cflags#SynUpdate()<cr>
+nnoremap <leader>fv :call cflags#PrintDefine()<cr>
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
