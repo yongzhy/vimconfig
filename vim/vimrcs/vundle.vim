@@ -112,6 +112,10 @@ Plugin 'yongzhy/vim-cflags'
 " Update buffer with preprocessor evaluated
 nnoremap <leader>bu :call cflags#SynUpdate()<cr>
 nnoremap <leader>fv :call cflags#PrintDefine()<cr>
+augroup c_file_group
+    autocmd!
+    autocmd BufWritePost,BufEnter *.h,*.c call cflags#SynUpdate()
+augroup END 
 
 
 call vundle#end()            " required
