@@ -38,6 +38,9 @@ silent! nnoremap <unique> <leader>fi :cs find i <C-R>=expand("<cfile>")<CR><CR>
 silent! nnoremap <unique> <leader>fs :cs find s <C-R>=expand("<cword>")<CR><CR>
 silent! nnoremap <unique> <leader>ft :cs find t <C-R>=expand("<cword>")<CR><CR>
 
+" ale
+set omnifunc=ale#completion#OmniFunc
+
 " tagbar
 silent! nnoremap <unique> <leader>lt :TagbarToggle<CR>
 
