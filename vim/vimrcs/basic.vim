@@ -32,8 +32,8 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -190,6 +190,7 @@ set tw=0
 set ai "Auto indent
 set si "Smart indent
 set nowrap "Wrap lines
+set cinoptions=l1
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -199,6 +200,11 @@ set laststatus=2
 
 " set modifiable according to file readonly state
 autocmd BufReadPost * if &readonly | setlocal nomodifiable | else | setlocal modifiable | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Remove trialing space 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre * :%s/\s\+$//e
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

@@ -20,8 +20,6 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map Space to Page down 
-nnoremap <SPACE> <PAGEDOWN>
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
@@ -38,15 +36,6 @@ nnoremap <F10> :resize -5<cr>
 nnoremap <F11> :resize +5<cr>
 " increase current window's width
 nnoremap <F12> :vertical resize +5<cr>
-
-" Smart way to move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-nnoremap <leader>wc <C-W>c
-nnoremap <leader>ws <C-W>s
-nnoremap <leader>wv <C-W>v
 
 " Swap window in split windows
 function! MarkWindowSwap()
